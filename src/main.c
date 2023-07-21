@@ -47,7 +47,7 @@ void cb_progcc_hardware_setup()
     progcc_setup_gpio_scan(PGPIO_SCAN_A);
     progcc_setup_gpio_scan(PGPIO_SCAN_B);
     progcc_setup_gpio_scan(PGPIO_SCAN_C);
-    progcc_setup_gpio_scan(PGPIO_SCAN_D);
+    //progcc_setup_gpio_scan(PGPIO_SCAN_D);
 
     // Set up Rumble GPIO
     gpio_init(PGPIO_RUMBLE_MAIN);
@@ -141,22 +141,15 @@ void cb_progcc_read_buttons()
 
     gpio_put(PGPIO_SCAN_C, false);
     sleep_us(100);
-    button_data.button_plus = !gpio_get(PGPIO_PUSH_A);
-    button_data.button_home = !gpio_get(PGPIO_PUSH_B);
-    button_data.button_capture = !gpio_get(PGPIO_PUSH_D);
-    button_data.button_minus = !gpio_get(PGPIO_PUSH_C);
-    gpio_put(PGPIO_SCAN_C, true);
-
-    gpio_put(PGPIO_SCAN_D, false);
-    sleep_us(100);
     button_data.trigger_r = !gpio_get(PGPIO_PUSH_B);
     button_data.trigger_l = !gpio_get(PGPIO_PUSH_D);
     button_data.trigger_zl = !gpio_get(PGPIO_PUSH_A);
     button_data.trigger_zr = !gpio_get(PGPIO_PUSH_C);
-    gpio_put(PGPIO_SCAN_D, true);
+    gpio_put(PGPIO_SCAN_C, true);
 
     button_data.button_stick_right = !gpio_get(PGPIO_BUTTON_RS);
     button_data.button_stick_left = !gpio_get(PGPIO_BUTTON_LS);
+    button_data.button_plus = !gpio_get(PGPIO_BUTTON_MODE);
 }
 
 void cb_progcc_read_analog()

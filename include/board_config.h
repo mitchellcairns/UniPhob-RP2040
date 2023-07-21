@@ -29,15 +29,15 @@
 #define PGPIO_BUTTON_MODE 14
 
 #if PROGCC_USE_KEYPAD
-  #define PGPIO_SCAN_A    23
-  #define PGPIO_SCAN_B    20
-  #define PGPIO_SCAN_C    17
-  #define PGPIO_SCAN_D    19
+  #define PGPIO_SCAN_A    20
+  #define PGPIO_SCAN_B    21
+  #define PGPIO_SCAN_C    22
+  #define PGPIO_SCAN_D    23
 
   #define PGPIO_PUSH_A    16
-  #define PGPIO_PUSH_B    18
-  #define PGPIO_PUSH_C    21
-  #define PGPIO_PUSH_D    22
+  #define PGPIO_PUSH_B    17
+  #define PGPIO_PUSH_C    18
+  #define PGPIO_PUSH_D    19
 #else
   #define PGPIO_BUTTON_A       17
   #define PGPIO_BUTTON_B       16
